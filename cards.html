@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="./cards.css">
+<style>
+div.card{
+float:left;
+}
+</style>
+<script type="text/javascript">
+var myArray = [1,7,8,9,10,11,12,13,14,20,21,22,23,24,25,26,27,33,34,35,36,37,38,39,40,46,47,48,49,50,51,52];
+function popup() {
+   var suiteMap = {1:"clubs",2:"spades",3:"hearts",4:"diamonds"};
+  var valueMap = {0:"king",1:"ace",7:"seven",8:"eight",9:"nine",10:"ten",11:"jack",12:"queen"};
+  var parent = document.getElementById('mydiv');
+  shuffleCards();
+  console.log(myArray);
+  for (var i=0;i<4;i++)
+  {
+    var f = myArray[i];
+	var suit = Math.floor(f/13)+1;
+	var value = f % 13;
+	var ele = document.createElement("div");
+    ele.setAttribute("class","card" + " " + suiteMap[suit] + " " + valueMap[value]);
+	if(i>0)
+	{
+		ele.setAttribute("style",["margin-left: -55px"]);
+	}
+	parent.appendChild(ele);
+  }
+}
+  function shuffleCards()
+  {
+	  var t = myArray.length;
+      for(var i=0;i<myArray.length;i++)
+	  {
+		 var x = Math.floor(Math.random()*t);
+		 var temp = myArray[x];
+		 myArray[x] = myArray[t-1];
+		 myArray[t-1] = temp;
+		 t--;
+	  }
+  }
+</script>
+<title>jQuery Demo</title>
+</head>
+ <body>
+<button onclick="popup()">Click me</button>
+<div id="mydiv"></div>
+ </body>
+</html>

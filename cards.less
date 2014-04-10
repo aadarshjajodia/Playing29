@@ -1,0 +1,67 @@
+@xincrement: -73px;
+@yincrement: -99px;
+@clubsx: 0px;
+@clubsy: 0px;
+@spadesx: @clubsx + @xincrement;
+@spadesy: @clubsy + @yincrement + 1;
+@heartsx: @spadesx + @xincrement;
+@heartsy: @spadesy + @yincrement + 1;
+@diamondsx: @heartsx + @xincrement;
+@diamondsy: @heartsy + @yincrement + 1;
+
+.card {
+	width: 72px;
+	height: 98px;
+  background: url('./playingcards.png') no-repeat;
+}
+.clubs{
+background-position-y: @clubsy;
+}
+.spades{
+background-position-y: @spadesy;
+}
+.hearts{
+background-position-y: @heartsy;
+}
+.diamonds{
+background-position-y: @diamondsy;
+}
+.ace{
+background-position-x: @clubsx;
+}
+.two{
+background-position-x: @clubsx + @xincrement;
+}
+.three{
+background-position-x: @clubsx + 2*@xincrement;
+}
+.four{
+background-position-x: @clubsx + 3*@xincrement;
+}
+.five{
+background-position-x: @clubsx + 4*@xincrement;
+}
+.six{
+background-position-x: @clubsx + 5*@xincrement;
+}
+.seven{
+background-position-x: @clubsx + 6*@xincrement;
+}
+.eight{
+background-position-x: @clubsx + 7*@xincrement;
+}
+.nine{
+background-position-x: @clubsx + 8*@xincrement;
+}
+.ten{
+background-position-x: @clubsx + 9*@xincrement;
+}
+.jack{
+background-position-x: @clubsx + 10*@xincrement;
+}
+.queen{
+background-position-x: @clubsx + 11*@xincrement;
+}
+.king{
+background-position-x: @clubsx + 12*@xincrement;
+}
